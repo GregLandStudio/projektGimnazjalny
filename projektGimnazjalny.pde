@@ -1,7 +1,7 @@
 
 
 void setup(){
-  size(1,1); //yellow submarine
+  size(800,600);
 }
 
 void draw(){
