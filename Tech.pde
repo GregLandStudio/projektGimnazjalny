@@ -1,7 +1,7 @@
 
 class Question{
-  String mongolianQuestion;
-  String[] mongolianAnswers;
+  String Question;
+  String[] Answers;
 }
 
 ArrayList<Question> questions = new ArrayList<Question>();
