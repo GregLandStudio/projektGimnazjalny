@@ -7,4 +7,5 @@ void graphics()
   textAlign(CENTER);
   text("Бидний сонирхолтой таах тоглоом!", width / 2, height / 4);
   text("Шинэ тоглоом", width / 5, (height / 4) * 3);
+  text("гарах", width - (width / 5), (height / 4) * 3);
 }

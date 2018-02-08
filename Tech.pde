@@ -4,7 +4,7 @@ class Question{
   String[] mongolianAnswers;
 }
 
-ArrayList<Question> questions = new ArrayList<>();
+ArrayList<Question> questions = new ArrayList<Question>();
 int qid = 0;
 Question current = questions.get(qid);
 
