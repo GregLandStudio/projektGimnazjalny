@@ -1,9 +1,9 @@
 
-void graphics(){
-  
+void graphics()
+{
   background(255);
   fill(0);
-  textSize(height/5);
+  textSize(height/20);
   textAlign(CENTER);
-  text("Great Quiz!", width/2,height/4);
+  text("Бидний сонирхолтой таах тоглоом!", width/2,height/4);
 }
