@@ -6,7 +6,7 @@ class Question{
 
 ArrayList<Question> questions = new ArrayList<Question>();
 int qid = 0;
-Question current = questions.get(qid);
+Question current;
 
 
 void update(){
