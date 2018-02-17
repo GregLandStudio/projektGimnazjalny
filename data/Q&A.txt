@@ -1,0 +1,8 @@
+Q:To jest testowe pytanie nr. 1!
+Tak
+Nie
+Q:Pytanie nr. 2!
+O nie!
+OK.
+Dobrze
+A¿ 4 odpowiedzi!

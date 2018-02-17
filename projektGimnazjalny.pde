@@ -1,11 +1,11 @@
 
 void setup(){
   size(800,600);
-  questions.add(new Question());
+  //questions.add(new Question());
+  loadQuestions("data/Q&A.txt");
 }
 
 void draw(){
-  questions.get(qid);
   update();
   graphics();
 }
