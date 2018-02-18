@@ -22,6 +22,7 @@ void graphics()
 
 void mousePressed()
 {
+assert(screen==1) : "Screen number "+screen+" does not exist!";//Jeżeli będziesz dodawał nowe screeny, dodaj ||screen==2 po screen==1
 switch(screen)
 {
   case 1:
@@ -36,13 +37,13 @@ switch(screen)
     }
   }
   break;
-  default:
+  /*default: to jest niepotrzebne
   {
     background(0);
     fill(255);
     textSize(50);
     text("Wystąpił nieoczekiwany błąd!", 400, 270);
-  }
+  }*/
   
 }
 
