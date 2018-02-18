@@ -6,3 +6,15 @@ O nie!
 OK.
 Dobrze
 A¿ 4 odpowiedzi!
+Q:Pytanie z obrazkiem
+I:data/computer.png
+To jest komputer
+To jest klawiatura
+To jest myszka
+To jest monitor
+Q:Pytanie z kolorem
+C:0000ff
+To jest kolor zielony
+To jest kolor niebieski
+To jest kolor ¿ó³ty
+To jest kolor czerwony
