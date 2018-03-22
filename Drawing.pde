@@ -22,7 +22,7 @@ void graphics()
 
 void mousePressed()
 {
-assert(screen==1) : "Screen number "+screen+" does not exist!";//Jeżeli będziesz dodawał nowe screeny, dodaj ||screen==2 po screen==1
+assert(screen == 1 || screen == 2) : "Screen number "+screen+" does not exist!"; //Jeżeli będziesz dodawał nowe screeny, dodaj ||screen == 2 po screen == 1
 switch(screen)
 {
   case 1:
@@ -37,13 +37,26 @@ switch(screen)
     }
   }
   break;
-  /*default: to jest niepotrzebne
+  case 2:
+  {
+    background(current.background);
+    fill(0, 0, 255);
+    rect(0, 0, 800, 250);
+    if(current.hasImage)
+    {
+    image(current.image, 300, 0);
+    }
+    text(current.question, 200, 220);
+    
+  }
+  break;
+  /* default: to jest niepotrzebne
   {
     background(0);
     fill(255);
     textSize(50);
     text("Wystąpił nieoczekiwany błąd!", 400, 270);
-  }*/
+  } */
   
 }
 

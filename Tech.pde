@@ -1,5 +1,6 @@
 
 class Question {
+  boolean hasImage;
   String question;
   String[] answers;
   PImage image;
@@ -34,11 +35,15 @@ void loadQuestions(String fn) {
   for (int i = 0; i<lines.length; ) {
     if (lines[i].startsWith("Q:")) {
       Question q=new Question();
+      q.hasImage=false;
+      q.background=color(255);
       q.answers=new String[0];
       q.question=lines[i].replace("Q:", "");
       while (++i<lines.length&&!lines[i].startsWith("Q:")) {
-        if (lines[i].startsWith("I:"))
+        if (lines[i].startsWith("I:")){
           q.image=loadImage(lines[i].replace("I:", ""));
+          q.hasImage=true;
+        }
         else if (lines[i].startsWith("C:"))
           q.background=Integer.parseInt(lines[i].replace("C:", ""),16);
         else
