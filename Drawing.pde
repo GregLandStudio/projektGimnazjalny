@@ -46,7 +46,8 @@ switch(screen)
     {
     image(current.image, 300, 0);
     }
-    text(current.question, 200, 220);
+    fill(0);
+    text(current.question, 400, 220);
     
   }
   break;
