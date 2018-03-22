@@ -5,6 +5,7 @@ class Question {
   String[] answers;
   PImage image;
   int background;
+  int correct = 1; //dla answers.length == 2 może być równe 1 albo 2 ORAZ dla answers.length == 4 może być równe 1, 2, 3 albo 4 (zależy, która odp. jest poprawna)
   public String toString() {
     String ans = "";
     for (int i = 0; i<answers.length; i++)

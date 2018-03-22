@@ -1,4 +1,9 @@
 int screen = 1;
+int ans1 = 200;
+int ans2 = 200;
+int ans3 = 200;
+int ans4 = 200;
+boolean hasDecided = false;
 void graphics()
 {
   if(screen == 1)
@@ -17,6 +22,32 @@ void graphics()
   textSize(30);
   text("Nowa gra", width / 5, (height / 4) * 3);
   text("Wyjście", width - (width / 5), (height / 4) * 3);
+  }
+    if(screen == 2)
+  {
+    if(hasDecided == false){ans1 = 200; ans2 = 200; ans3 = 200; ans4 = 200;}
+  background(current.background);
+    fill(0, 0, 255);
+    rect(0, 0, 800, 250);
+    if(current.hasImage)
+    {
+    image(current.image, 300, 0);
+    }
+    fill(0);
+    text(current.question, 400, 220);
+    if(current.answers.length == 2)
+    {
+      fill(ans1);
+      rect(20, 350, 200, 100);
+      fill(ans2);
+      rect(width - 220, 350, 200, 100);
+      
+    }
+    if(current.answers.length == 4)
+    {
+      
+    }
+    
   }
 }
 
@@ -39,16 +70,35 @@ switch(screen)
   break;
   case 2:
   {
-    background(current.background);
-    fill(0, 0, 255);
-    rect(0, 0, 800, 250);
-    if(current.hasImage)
+    if(current.answers.length == 2)
     {
-    image(current.image, 300, 0);
+      if(mouseX >= 20 && mouseX <= 220 && mouseY >= 350 && mouseY <= 450){
+        hasDecided = true;
+        if(current.correct == 1)
+        {
+          ans1 = color(0, 255, 0);
+          ans2 = color(255, 0, 0);
+        }
+        if(current.correct == 2)
+        {
+          ans1 = color(255, 0, 0);
+          ans2 = color(0, 255, 0);
+        }
+      }
+      if(mouseX >= 580 && mouseX <= 780 && mouseY >= 350 && mouseY <= 450){
+        hasDecided = true;
+        if(current.correct == 1)
+        {
+          ans1 = color(0, 255, 0);
+          ans2 = color(255, 0, 0);
+        }
+        if(current.correct == 2)
+        {
+          ans1 = color(255, 0, 0);
+          ans2 = color(0, 255, 0);
+        }
+      }
     }
-    fill(0);
-    text(current.question, 400, 220);
-    
   }
   break;
   /* default: to jest niepotrzebne
