@@ -28,7 +28,7 @@ void graphics()
     if(screen == 2)
   {
     if(hasDecided == false){ans1 = 200; ans2 = 200; ans3 = 200; ans4 = 200;}
-  background(current.background);
+  background(red(current.background),green(current.background),blue(current.background));
     fill(0, 0, 255);
     rect(0, 0, 800, 250);
     fill(0);
