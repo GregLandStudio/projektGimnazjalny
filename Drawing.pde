@@ -295,13 +295,6 @@ switch(screen)
     }
   }
   break;
-  /* default: to jest niepotrzebne
-  {
-    background(0);
-    fill(255);
-    textSize(50);
-    text("Wystąpił nieoczekiwany błąd!", 400, 270);
-  } */
   
 }
 

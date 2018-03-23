@@ -1,11 +1,11 @@
-
+import java.io.*;
 class Question {
   boolean hasImage;
   String question;
   String[] answers;
   PImage image;
   int background;
-  int correct = 1; //dla answers.length == 2 może być równe 1 albo 2 ORAZ dla answers.length == 4 może być równe 1, 2, 3 albo 4 (zależy, która odp. jest poprawna)
+  int correct = 1;
   public String toString() {
     String ans = "";
     for (int i = 0; i<answers.length; i++)
@@ -15,8 +15,7 @@ class Question {
 }
 
 char getNthLetterOfTheAlphabet(int n) {
-  assert(n>=1&&n<=("ABCDEFGHIJKLMNOPQRSTUVWXYZ").length()+1) : 
-  "There is no "+n+(n%10==1?"st":n%10==2?"nd":n%10==3?"rd":"th")+" letter of the alphabet!";
+  assert(n>=1&&n<=("ABCDEFGHIJKLMNOPQRSTUVWXYZ").length()+1) : "There is no "+n+(n%10==1?"st":n%10==2?"nd":n%10==3?"rd":"th")+" letter of the alphabet!";
   return ("ABCDEFGHIJKLMNOPQRSTUVWXYZ").toCharArray()[n-1];
 }
 
@@ -26,8 +25,7 @@ Question current;
 
 
 void update() {
-  assert(questions.size()>0) : 
-  "No questions were loaded!";
+  assert(questions.size()>0) : "No questions were loaded!";
   current=questions.get(qid);
 }
 
@@ -47,10 +45,11 @@ void loadQuestions(String fn) {
         }
         else if (lines[i].startsWith("C:"))
           q.background=Integer.parseInt(lines[i].replace("C:", ""),16);
+        else if (lines[i].startsWith("T:"))
+          q.correct=Integer.parseInt(lines[i].replace("T:", ""));
         else
           q.answers=append(q.answers, lines[i]);
       }
-      //println(q);
       questions.add(q);
     } else {
       screen=3253;

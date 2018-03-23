@@ -1,20 +1,24 @@
 Q:To jest testowe pytanie nr. 1!
+T:1
 Tak
 Nie
 Q:Pytanie nr. 2!
+T:4
 O nie!
 OK.
 Dobrze
-A¿ 4 odpowiedzi!
+AÅ¼ 4 odpowiedzi!
 Q:Pytanie z obrazkiem
+T:4
 I:data/computer.png
 To jest komputer
 To jest klawiatura
 To jest myszka
 To jest monitor
 Q:Pytanie z kolorem
+T:2
 C:0000ff
 To jest kolor zielony
 To jest kolor niebieski
-To jest kolor ¿ó³ty
+To jest kolor Å¼Ã³Å‚ty
 To jest kolor czerwony
