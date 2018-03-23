@@ -1,3 +1,4 @@
+int score = 0;
 int screen = 1;
 int ans1 = 200;
 int ans2 = 200;
@@ -29,23 +30,46 @@ void graphics()
   background(current.background);
     fill(0, 0, 255);
     rect(0, 0, 800, 250);
+    fill(0);
     if(current.hasImage)
     {
     image(current.image, 300, 0);
+    text(current.question, 400, 220);
     }
     fill(0);
-    text(current.question, 400, 220);
+     if(current.hasImage == false)
+    {
+      text(current.question, 400, 120);
+    }
     if(current.answers.length == 2)
     {
       fill(ans1);
       rect(20, 350, 200, 100);
       fill(ans2);
       rect(width - 220, 350, 200, 100);
-      
+      fill(0);
+      text(current.answers[0], 120, 415);
+      text(current.answers[1], 680, 415);
+      text("Punkty:", 350, 550);
+      text(score, 450, 550);
     }
     if(current.answers.length == 4)
     {
-      
+      fill(ans1);
+      rect(20, 270, 200, 100);
+      fill(ans2);
+      rect(width - 220, 270, 200, 100);
+      fill(ans3);
+      rect(20, height - 120, 200, 100);
+      fill(ans4);
+      rect(width - 220, height - 120, 200, 100);
+      fill(0);
+      text(current.answers[0], 120, 325);
+      text(current.answers[1], 680, 325);
+      text(current.answers[2], 120, 540);
+      text(current.answers[3], 680, 540);
+      text("Punkty:", 350, 550);
+      text(score, 450, 550);
     }
     
   }
@@ -78,6 +102,7 @@ switch(screen)
         {
           ans1 = color(0, 255, 0);
           ans2 = color(255, 0, 0);
+          score += 100;
         }
         if(current.correct == 2)
         {
@@ -96,6 +121,142 @@ switch(screen)
         {
           ans1 = color(255, 0, 0);
           ans2 = color(0, 255, 0);
+          score += 100;
+        }
+      }
+    }
+    if(current.answers.length == 4)
+    {
+      if(mouseX >= 20 && mouseX <= 220 && mouseY >= 270 && mouseY <= 370)
+      {
+        hasDecided = true;
+        if(current.correct == 1)
+        {
+          ans1 = color(0, 255, 0);
+          ans2 = color(255, 0, 0);
+          ans3 = color(255, 0, 0);
+          ans4 = color(255, 0, 0);
+          score += 200;
+        }
+        if(current.correct == 2)
+        {
+          ans1 = color(255, 0, 0);
+          ans2 = color(0, 255, 0);
+          ans3 = color(255, 0, 0);
+          ans4 = color(255, 0, 0);
+        }
+        if(current.correct == 3)
+        {
+          ans1 = color(255, 0, 0);
+          ans2 = color(255, 0, 0);
+          ans3 = color(0, 255, 0);
+          ans4 = color(255, 0, 0);
+        }
+        if(current.correct == 4)
+        {
+          ans1 = color(255, 0, 0);
+          ans2 = color(255, 0, 0);
+          ans3 = color(255, 0, 0);
+          ans4 = color(0, 255, 0);
+        }
+      }
+       if(mouseX >= width - 220 && mouseX <= 780 && mouseY >= 270 && mouseY <= 370)
+      {
+        hasDecided = true;
+        if(current.correct == 1)
+        {
+          ans1 = color(0, 255, 0);
+          ans2 = color(255, 0, 0);
+          ans3 = color(255, 0, 0);
+          ans4 = color(255, 0, 0);
+        }
+        if(current.correct == 2)
+        {
+          ans1 = color(255, 0, 0);
+          ans2 = color(0, 255, 0);
+          ans3 = color(255, 0, 0);
+          ans4 = color(255, 0, 0);
+          score += 200;
+        }
+        if(current.correct == 3)
+        {
+          ans1 = color(255, 0, 0);
+          ans2 = color(255, 0, 0);
+          ans3 = color(0, 255, 0);
+          ans4 = color(255, 0, 0);
+        }
+        if(current.correct == 4)
+        {
+          ans1 = color(255, 0, 0);
+          ans2 = color(255, 0, 0);
+          ans3 = color(255, 0, 0);
+          ans4 = color(0, 255, 0);
+        }
+      }
+       if(mouseX >= 20 && mouseX <= 220 && mouseY >= 480 && mouseY <= 580)
+      {
+        hasDecided = true;
+        if(current.correct == 1)
+        {
+          ans1 = color(0, 255, 0);
+          ans2 = color(255, 0, 0);
+          ans3 = color(255, 0, 0);
+          ans4 = color(255, 0, 0);
+        }
+        if(current.correct == 2)
+        {
+          ans1 = color(255, 0, 0);
+          ans2 = color(0, 255, 0);
+          ans3 = color(255, 0, 0);
+          ans4 = color(255, 0, 0);
+        }
+        if(current.correct == 3)
+        {
+          ans1 = color(255, 0, 0);
+          ans2 = color(255, 0, 0);
+          ans3 = color(0, 255, 0);
+          ans4 = color(255, 0, 0);
+          score += 200;
+        }
+        if(current.correct == 4)
+        {
+          ans1 = color(255, 0, 0);
+          ans2 = color(255, 0, 0);
+          ans3 = color(255, 0, 0);
+          ans4 = color(0, 255, 0);
+        }
+      }
+       if(mouseX >= 580 && mouseX <= 780 && mouseY >= 480 && mouseY <= 780)
+      {
+        hasDecided = true;
+        if(current.correct == 1)
+        {
+          ans1 = color(0, 255, 0);
+          ans2 = color(255, 0, 0);
+          ans3 = color(255, 0, 0);
+          ans4 = color(255, 0, 0);
+        }
+        if(current.correct == 2)
+        {
+          ans1 = color(255, 0, 0);
+          ans2 = color(0, 255, 0);
+          ans3 = color(255, 0, 0);
+          ans4 = color(255, 0, 0);
+        }
+        if(current.correct == 3)
+        {
+          ans1 = color(255, 0, 0);
+          ans2 = color(255, 0, 0);
+          ans3 = color(0, 255, 0);
+          ans4 = color(255, 0, 0);
+        }
+        if(current.correct == 4)
+        {
+          ans1 = color(255, 0, 0);
+          ans2 = color(255, 0, 0);
+          ans3 = color(255, 0, 0);
+          ans4 = color(0, 255, 0);
+          score += 200;
         }
       }
     }
