@@ -1,3 +1,4 @@
+
 int score = 0;
 int screen = 1;
 int ans1 = 200;
@@ -71,7 +72,13 @@ void graphics()
       text("Punkty:", 350, 550);
       text(score, 450, 550);
     }
-    
+    if(hasDecided == true)
+    {
+      fill(255, 255, 0);
+      rect(275, 375, 250, 100);
+      fill(0);
+      text("Następne pytanie", 400, 430);
+    }
   }
 }
 
@@ -97,12 +104,15 @@ switch(screen)
     if(current.answers.length == 2)
     {
       if(mouseX >= 20 && mouseX <= 220 && mouseY >= 350 && mouseY <= 450){
+        if(hasDecided == false && current.correct == 1)
+        {
+        score += 100;
+        }
         hasDecided = true;
         if(current.correct == 1)
         {
           ans1 = color(0, 255, 0);
           ans2 = color(255, 0, 0);
-          score += 100;
         }
         if(current.correct == 2)
         {
@@ -111,6 +121,10 @@ switch(screen)
         }
       }
       if(mouseX >= 580 && mouseX <= 780 && mouseY >= 350 && mouseY <= 450){
+        if(hasDecided == false && current.correct == 2)
+        {
+        score += 100;
+        }
         hasDecided = true;
         if(current.correct == 1)
         {
@@ -121,7 +135,6 @@ switch(screen)
         {
           ans1 = color(255, 0, 0);
           ans2 = color(0, 255, 0);
-          score += 100;
         }
       }
     }
@@ -129,6 +142,10 @@ switch(screen)
     {
       if(mouseX >= 20 && mouseX <= 220 && mouseY >= 270 && mouseY <= 370)
       {
+        if(hasDecided == false && current.correct == 1)
+        {
+        score += 200;
+        }
         hasDecided = true;
         if(current.correct == 1)
         {
@@ -136,7 +153,6 @@ switch(screen)
           ans2 = color(255, 0, 0);
           ans3 = color(255, 0, 0);
           ans4 = color(255, 0, 0);
-          score += 200;
         }
         if(current.correct == 2)
         {
@@ -162,6 +178,10 @@ switch(screen)
       }
        if(mouseX >= width - 220 && mouseX <= 780 && mouseY >= 270 && mouseY <= 370)
       {
+        if(hasDecided == false && current.correct == 2)
+        {
+        score += 200;
+        }
         hasDecided = true;
         if(current.correct == 1)
         {
@@ -176,7 +196,6 @@ switch(screen)
           ans2 = color(0, 255, 0);
           ans3 = color(255, 0, 0);
           ans4 = color(255, 0, 0);
-          score += 200;
         }
         if(current.correct == 3)
         {
@@ -195,6 +214,10 @@ switch(screen)
       }
        if(mouseX >= 20 && mouseX <= 220 && mouseY >= 480 && mouseY <= 580)
       {
+        if(hasDecided == false && current.correct == 3)
+        {
+        score += 200;
+        }
         hasDecided = true;
         if(current.correct == 1)
         {
@@ -216,7 +239,6 @@ switch(screen)
           ans2 = color(255, 0, 0);
           ans3 = color(0, 255, 0);
           ans4 = color(255, 0, 0);
-          score += 200;
         }
         if(current.correct == 4)
         {
@@ -228,6 +250,10 @@ switch(screen)
       }
        if(mouseX >= 580 && mouseX <= 780 && mouseY >= 480 && mouseY <= 780)
       {
+        if(hasDecided == false && current.correct == 4)
+        {
+        score += 200;
+        }
         hasDecided = true;
         if(current.correct == 1)
         {
@@ -256,8 +282,15 @@ switch(screen)
           ans2 = color(255, 0, 0);
           ans3 = color(255, 0, 0);
           ans4 = color(0, 255, 0);
-          score += 200;
         }
+      }
+    }
+    if(hasDecided == true)
+    {
+      if(mouseX >= 275 && mouseX <= 525 && mouseY >= 375 && mouseY <= 475)
+      {
+        hasDecided = false;
+        qid++;
       }
     }
   }
