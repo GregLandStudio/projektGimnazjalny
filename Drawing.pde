@@ -1,11 +1,7 @@
-
+boolean scd = true;
 int score = 0;
 int screen = 1;
-int ans1 = 200;
-int ans2 = 200;
-int ans3 = 200;
-int ans4 = 200;
-boolean hasDecided = false;
+int[] ans = new int[4];
 void graphics()
 {
   if(screen == 1)
@@ -15,20 +11,15 @@ void graphics()
   textAlign(CENTER);
   fill(0, 0, 255);
   rect(175, 85, 450, 100);
-  fill(0, 255, 0);
-  rect(75, 400, 180, 80);
-  fill(255, 0, 0);
-  rect(550, 400, 180, 80);
   fill(0);
   text("Nasz fajny quiz!", width / 2, height / 4);
   textSize(30);
-  text("Nowa gra", width / 5, (height / 4) * 3);
-  text("Wyjście", width - (width / 5), (height / 4) * 3);
+  menubutton1.display();
+  menubutton2.display();
   }
     if(screen == 2)
   {
-    if(hasDecided == false){ans1 = 200; ans2 = 200; ans3 = 200; ans4 = 200;}
-  background(red(current.background),green(current.background),blue(current.background));
+    background(red(current.background),green(current.background),blue(current.background));
     fill(0, 0, 255);
     rect(0, 0, 800, 250);
     fill(0);
@@ -44,41 +35,70 @@ void graphics()
     }
     if(current.answers.length == 2)
     {
-      fill(ans1);
-      rect(20, 350, 200, 100);
-      fill(ans2);
-      rect(width - 220, 350, 200, 100);
-      fill(0);
-      text(current.answers[0], 120, 415);
-      text(current.answers[1], 680, 415);
-      text("Punkty:", 350, 550);
-      text(score, 450, 550);
+      load_double();
+      doubleans1.display();
+      doubleans2.display();
+      if(doubleans1.pressed == true || doubleans2.pressed == true)
+      {
+        load_nq();
+        if(scd == true)
+        {
+        if(doubleans1.pressed == true && current.correct == 1)
+        {
+          score += 100;
+        }
+        if(doubleans2.pressed == true && current.correct == 2)
+        {
+          score += 100;
+        }
+        scd = false;
+        }
+        nq.display();
+      }
     }
     if(current.answers.length == 4)
     {
-      fill(ans1);
-      rect(20, 270, 200, 100);
-      fill(ans2);
-      rect(width - 220, 270, 200, 100);
-      fill(ans3);
-      rect(20, height - 120, 200, 100);
-      fill(ans4);
-      rect(width - 220, height - 120, 200, 100);
-      fill(0);
-      text(current.answers[0], 120, 325);
-      text(current.answers[1], 680, 325);
-      text(current.answers[2], 120, 540);
-      text(current.answers[3], 680, 540);
-      text("Punkty:", 350, 550);
-      text(score, 450, 550);
+      load_quad();
+      if(quadans1.pressed == false && quadans2.pressed == false && quadans3.pressed == false && quadans4.pressed == false)
+      {
+         quadans1.col = 200;
+         quadans2.col = 200;
+         quadans3.col = 200;
+         quadans4.col = 200;
+      }
+  
+      quadans1.display();
+      quadans2.display();
+      quadans3.display();
+      quadans4.display();
+      if(quadans1.pressed == true || quadans2.pressed == true || quadans3.pressed == true || quadans4.pressed == true)
+      {
+        load_nq();
+        if(scd == true)
+        {
+        if(quadans1.pressed == true && current.correct == 1)
+        {
+          score += 200;
+        }
+        if(quadans2.pressed == true && current.correct == 2)
+        {
+          score += 200;
+        }
+        if(quadans3.pressed == true && current.correct == 3)
+        {
+          score += 200;
+        }
+        if(quadans4.pressed == true && current.correct == 4)
+        {
+          score += 200;
+        }
+        scd = false;
+        }
+        nq.display();
+      }
     }
-    if(hasDecided == true)
-    {
-      fill(255, 255, 0);
-      rect(275, 375, 250, 100);
-      fill(0);
-      text("Następne pytanie", 400, 430);
-    }
+      text("Punkty:", 350, 300);
+      text(score, 450, 300);
   }
 }
 
@@ -89,12 +109,16 @@ switch(screen)
 {
   case 1:
   {
-    if(mouseX >= 75 && mouseX <= 255 && mouseY >= 400 && mouseY <= 480)
+    menubutton1.hitbox();
+    menubutton2.hitbox();
+    if(menubutton1.pressed)
     {
       screen = 2;
+      menubutton1.pressed = false;
     }
-    if(mouseX >= 550 && mouseX <= 730 && mouseY >= 400 && mouseY <= 480)
+    if(menubutton2.pressed)
     {
+      menubutton2.pressed = false;
       exit();
     }
   }
@@ -103,193 +127,68 @@ switch(screen)
   {
     if(current.answers.length == 2)
     {
-      if(mouseX >= 20 && mouseX <= 220 && mouseY >= 350 && mouseY <= 450){
-        if(hasDecided == false && current.correct == 1)
+      doubleans1.hitbox();
+      doubleans2.hitbox();
+      if(doubleans1.pressed == true || doubleans2.pressed == true)
+      {
+        ans[0] = color(255, 0, 0);
+        ans[1] = color(255, 0, 0);
+        ans[current.correct - 1] = color(0, 255, 0);
+        doubleans1.col = ans[0];
+        doubleans2.col = ans[1];
+        nq.hitbox();
+        if(nq.pressed)
         {
-        score += 100;
-        }
-        hasDecided = true;
-        if(current.correct == 1)
-        {
-          ans1 = color(0, 255, 0);
-          ans2 = color(255, 0, 0);
-        }
-        if(current.correct == 2)
-        {
-          ans1 = color(255, 0, 0);
-          ans2 = color(0, 255, 0);
-        }
-      }
-      if(mouseX >= 580 && mouseX <= 780 && mouseY >= 350 && mouseY <= 450){
-        if(hasDecided == false && current.correct == 2)
-        {
-        score += 100;
-        }
-        hasDecided = true;
-        if(current.correct == 1)
-        {
-          ans1 = color(0, 255, 0);
-          ans2 = color(255, 0, 0);
-        }
-        if(current.correct == 2)
-        {
-          ans1 = color(255, 0, 0);
-          ans2 = color(0, 255, 0);
+          doubleans1.pressed = false;
+          doubleans2.pressed = false;
+          ans[0] = 200;
+          ans[1] = 200;
+          nq.pressed = false;
+          scd = true;
+          qid++;
         }
       }
     }
     if(current.answers.length == 4)
     {
-      if(mouseX >= 20 && mouseX <= 220 && mouseY >= 270 && mouseY <= 370)
+      quadans1.hitbox();
+      quadans2.hitbox();
+      quadans3.hitbox();
+      quadans4.hitbox();
+      
+      if(quadans1.pressed == true || quadans2.pressed == true || quadans3.pressed == true || quadans4.pressed == true)
       {
-        if(hasDecided == false && current.correct == 1)
+        ans[0] = color(255, 0, 0);
+        ans[1] = color(255, 0, 0);
+        ans[2] = color(255, 0, 0);
+        ans[3] = color(255, 0, 0);
+        ans[current.correct - 1] = color(0, 255, 0);
+        quadans1.col = ans[0];
+        quadans2.col = ans[1];
+        quadans3.col = ans[2];
+        quadans4.col = ans[3];
+        nq.hitbox(); 
+        if(nq.pressed)
         {
-        score += 200;
-        }
-        hasDecided = true;
-        if(current.correct == 1)
-        {
-          ans1 = color(0, 255, 0);
-          ans2 = color(255, 0, 0);
-          ans3 = color(255, 0, 0);
-          ans4 = color(255, 0, 0);
-        }
-        if(current.correct == 2)
-        {
-          ans1 = color(255, 0, 0);
-          ans2 = color(0, 255, 0);
-          ans3 = color(255, 0, 0);
-          ans4 = color(255, 0, 0);
-        }
-        if(current.correct == 3)
-        {
-          ans1 = color(255, 0, 0);
-          ans2 = color(255, 0, 0);
-          ans3 = color(0, 255, 0);
-          ans4 = color(255, 0, 0);
-        }
-        if(current.correct == 4)
-        {
-          ans1 = color(255, 0, 0);
-          ans2 = color(255, 0, 0);
-          ans3 = color(255, 0, 0);
-          ans4 = color(0, 255, 0);
-        }
-      }
-       if(mouseX >= width - 220 && mouseX <= 780 && mouseY >= 270 && mouseY <= 370)
-      {
-        if(hasDecided == false && current.correct == 2)
-        {
-        score += 200;
-        }
-        hasDecided = true;
-        if(current.correct == 1)
-        {
-          ans1 = color(0, 255, 0);
-          ans2 = color(255, 0, 0);
-          ans3 = color(255, 0, 0);
-          ans4 = color(255, 0, 0);
-        }
-        if(current.correct == 2)
-        {
-          ans1 = color(255, 0, 0);
-          ans2 = color(0, 255, 0);
-          ans3 = color(255, 0, 0);
-          ans4 = color(255, 0, 0);
-        }
-        if(current.correct == 3)
-        {
-          ans1 = color(255, 0, 0);
-          ans2 = color(255, 0, 0);
-          ans3 = color(0, 255, 0);
-          ans4 = color(255, 0, 0);
-        }
-        if(current.correct == 4)
-        {
-          ans1 = color(255, 0, 0);
-          ans2 = color(255, 0, 0);
-          ans3 = color(255, 0, 0);
-          ans4 = color(0, 255, 0);
-        }
-      }
-       if(mouseX >= 20 && mouseX <= 220 && mouseY >= 480 && mouseY <= 580)
-      {
-        if(hasDecided == false && current.correct == 3)
-        {
-        score += 200;
-        }
-        hasDecided = true;
-        if(current.correct == 1)
-        {
-          ans1 = color(0, 255, 0);
-          ans2 = color(255, 0, 0);
-          ans3 = color(255, 0, 0);
-          ans4 = color(255, 0, 0);
-        }
-        if(current.correct == 2)
-        {
-          ans1 = color(255, 0, 0);
-          ans2 = color(0, 255, 0);
-          ans3 = color(255, 0, 0);
-          ans4 = color(255, 0, 0);
-        }
-        if(current.correct == 3)
-        {
-          ans1 = color(255, 0, 0);
-          ans2 = color(255, 0, 0);
-          ans3 = color(0, 255, 0);
-          ans4 = color(255, 0, 0);
-        }
-        if(current.correct == 4)
-        {
-          ans1 = color(255, 0, 0);
-          ans2 = color(255, 0, 0);
-          ans3 = color(255, 0, 0);
-          ans4 = color(0, 255, 0);
-        }
-      }
-       if(mouseX >= 580 && mouseX <= 780 && mouseY >= 480 && mouseY <= 780)
-      {
-        if(hasDecided == false && current.correct == 4)
-        {
-        score += 200;
-        }
-        hasDecided = true;
-        if(current.correct == 1)
-        {
-          ans1 = color(0, 255, 0);
-          ans2 = color(255, 0, 0);
-          ans3 = color(255, 0, 0);
-          ans4 = color(255, 0, 0);
-        }
-        if(current.correct == 2)
-        {
-          ans1 = color(255, 0, 0);
-          ans2 = color(0, 255, 0);
-          ans3 = color(255, 0, 0);
-          ans4 = color(255, 0, 0);
-        }
-        if(current.correct == 3)
-        {
-          ans1 = color(255, 0, 0);
-          ans2 = color(255, 0, 0);
-          ans3 = color(0, 255, 0);
-          ans4 = color(255, 0, 0);
-        }
-        if(current.correct == 4)
-        {
-          ans1 = color(255, 0, 0);
-          ans2 = color(255, 0, 0);
-          ans3 = color(255, 0, 0);
-          ans4 = color(0, 255, 0);
+          quadans1.pressed = false;
+          quadans2.pressed = false;
+          quadans3.pressed = false;
+          quadans4.pressed = false;
+          ans[0] = 200;
+          ans[1] = 200;
+          ans[2] = 200;
+          ans[3] = 200;
+          nq.pressed = false;
+          scd = true;
+          qid++;
         }
       }
     }
-    if(hasDecided == true)
+    if(nq.pressed)
     {
       if(mouseX >= 275 && mouseX <= 525 && mouseY >= 375 && mouseY <= 475)
       {
-        hasDecided = false;
+        nq.pressed = false;
         qid++;
       }
     }
