@@ -8,6 +8,13 @@ void setup(){
 }
 
 void draw(){
+  if(qid == questions.size() && end == true)
+  {
+     screen = 3;
+  }
+  else
+  {
   update();
+  }
   graphics();
 }

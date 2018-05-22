@@ -1,18 +1,20 @@
 boolean scd = true;
+boolean end = false;
 int score = 0;
 int screen = 1;
 int[] ans = new int[4];
+
 void graphics()
 {
   if(screen == 1)
   {
   background(255);
-  textSize(50);
+  textSize(40);
   textAlign(CENTER);
-  fill(0, 0, 255);
+  fill(100, 100, 255);
   rect(175, 85, 450, 100);
   fill(0);
-  text("Nasz fajny quiz!", width / 2, height / 4);
+  text("Informatyczny Quiz", width / 2, height / 4);
   textSize(30);
   menubutton1.display();
   menubutton2.display();
@@ -20,6 +22,8 @@ void graphics()
     if(screen == 2)
   {
     background(red(current.background),green(current.background),blue(current.background));
+    fill(255);
+    rect(0, 250, 800, 350);
     fill(0, 0, 255);
     rect(0, 0, 800, 250);
     fill(0);
@@ -100,11 +104,21 @@ void graphics()
       text("Punkty:", 350, 300);
       text(score, 450, 300);
   }
+  if(screen == 3)
+  {
+    background(200, 200, 0);
+    textSize(50);
+    text("Wynik:", width / 2 - 100, height / 2);
+    text(score, width / 2 + 50, height / 2);
+    menubutton2.pressed = false;
+    textSize(40);
+    menubutton2.display();
+  }
 }
 
 void mousePressed()
 {
-assert(screen == 1 || screen == 2) : "Screen number "+screen+" does not exist!"; //Jeżeli będziesz dodawał nowe screeny, dodaj ||screen == 2 po screen == 1
+assert(screen == 1 || screen == 2 || screen == 3) : "Screen number "+screen+" does not exist!"; //Jeżeli będziesz dodawał nowe screeny, dodaj ||screen == 2 po screen == 1
 switch(screen)
 {
   case 1:
@@ -145,6 +159,7 @@ switch(screen)
           ans[1] = 200;
           nq.pressed = false;
           scd = true;
+          end = true;
           qid++;
         }
       }
@@ -180,6 +195,7 @@ switch(screen)
           ans[3] = 200;
           nq.pressed = false;
           scd = true;
+          end = true;
           qid++;
         }
       }
@@ -194,7 +210,14 @@ switch(screen)
     }
   }
   break;
-  
+  case 3:
+  {
+    if(mouseX >= width - menubutton2.w - 50 && mouseX <= width - menubutton2.w + 150 && mouseY >= 420 && mouseY <= 520)
+    {
+      exit();
+    }
+  }
+  break;
 }
 
 
