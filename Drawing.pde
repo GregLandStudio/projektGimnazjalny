@@ -113,6 +113,7 @@ void graphics()
     menubutton2.pressed = false;
     textSize(40);
     menubutton2.display();
+    endbutton.display();
   }
 }
 
@@ -212,6 +213,13 @@ switch(screen)
   break;
   case 3:
   {
+    if(mouseX >= 50 && mouseX <= 450 && mouseY >= 420 && mouseY <= 520)
+    {
+      endbutton.pressed = false;
+      screen = 1;
+      qid = 1;
+      score = 0;
+    }
     if(mouseX >= width - menubutton2.w - 50 && mouseX <= width - menubutton2.w + 150 && mouseY >= 420 && mouseY <= 520)
     {
       exit();

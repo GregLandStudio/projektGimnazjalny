@@ -8,6 +8,7 @@ Button quadans2;
 Button quadans3;
 Button quadans4;
 Button nq;
+Button endbutton;
 
 public void load_obj()
 {
@@ -20,6 +21,7 @@ public void load_obj()
   quadans3 = new Button();
   quadans4 = new Button();
   nq = new Button();
+  endbutton = new Button();
   //menu buttons
   menubutton1.x = 50;
   menubutton1.y = 420;
@@ -34,6 +36,13 @@ public void load_obj()
   menubutton2.h = 100;
   menubutton2.col = 200;
   menubutton2.text = "Wyjdź...";
+  
+  endbutton.x = 50;
+  endbutton.y = 420;
+  endbutton.w = 400;
+  endbutton.h = 100;
+  endbutton.col = 200;
+  endbutton.text = "Zagraj jeszcze raz!";
  
   ans[0] = 200;
   ans[1] = 200;
