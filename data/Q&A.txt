@@ -1,4 +1,4 @@
-Q:To jest testowe pytanie nr. 1!
+﻿Q:To jest testowe pytanie nr. 1!
 T:1
 Tak
 Nie

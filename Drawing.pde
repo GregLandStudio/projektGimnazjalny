@@ -1,6 +1,5 @@
 boolean scd = true;
 boolean end = false;
-int score = 0;
 int screen = 1;
 int[] ans = new int[4];
 
@@ -21,10 +20,9 @@ void graphics()
   }
     if(screen == 2)
   {
-    background(red(current.background),green(current.background),blue(current.background));
     fill(255);
     rect(0, 250, 800, 350);
-    fill(0, 0, 255);
+    fill(red(current.background),green(current.background),blue(current.background));
     rect(0, 0, 800, 250);
     fill(0);
     if(current.hasImage)
@@ -47,13 +45,14 @@ void graphics()
         load_nq();
         if(scd == true)
         {
+        if(current.points==-1)current.points=100;
         if(doubleans1.pressed == true && current.correct == 1)
         {
-          score += 100;
+          score += current.points;
         }
         if(doubleans2.pressed == true && current.correct == 2)
         {
-          score += 100;
+          score += current.points;
         }
         scd = false;
         }
@@ -80,21 +79,22 @@ void graphics()
         load_nq();
         if(scd == true)
         {
+        if(current.points==-1)current.points=200;
         if(quadans1.pressed == true && current.correct == 1)
         {
-          score += 200;
+          score += current.points;
         }
         if(quadans2.pressed == true && current.correct == 2)
         {
-          score += 200;
+          score += current.points;
         }
         if(quadans3.pressed == true && current.correct == 3)
         {
-          score += 200;
+          score += current.points;
         }
         if(quadans4.pressed == true && current.correct == 4)
         {
-          score += 200;
+          score += current.points;
         }
         scd = false;
         }
