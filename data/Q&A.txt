@@ -1,24 +1,248 @@
-﻿Q:To jest testowe pytanie nr. 1!
+﻿Q:1. Partycją systemu Linux przechowującą tymczasowo dane w przypadku braku wolnej pamięci RAM jest
+T:4
+var
+sys
+tmp
+swap
+Q:2. W systemie Windows ustawienia bieżącego użytkownika komputera zapisane są w gałęzi rejestru o skróconej nazwie:
+T:3
+HKCC
+HKCR
+HKCU
+HKLM
+Q:3. Plik messages w systemie Linux przechowuje
+T:4
+kody błędów systemowych
+dane dotyczące uwierzytelniania
+komunikaty związane z inicjacją systemu
+ogólne informacje o zdarzeniach systemowych
+Q:4. Urządzenie peryferyjne sterowane za pomocą komputera, stosowane do pracy z płaskimi powierzchniami wielkoformatowymi, które do tworzenia wydruku odpornego na czynniki zewnętrzne wykorzystuje farby na bazie rozpuszczalników, to ploter
 T:1
-Tak
-Nie
-Q:Pytanie nr. 2!
+solwentowy 
+piaskowy
+kreślący
+tnący
+Q:5. Aby blokować i usuwać szkodliwe oprogramowanie typu exploit, robaki oraz trojany, należy zainstalować oprogramowanie
+T:1
+antymalware
+antyspyware
+antyspam
+adblock
+Q:6. Po uruchomieniu komputera pojawił się komunikat "Non-system disk or disk error. Replace and strike any key when ready". Przyczyną może być
 T:4
-O nie!
-OK.
-Dobrze
-Aż 4 odpowiedzi!
-Q:Pytanie z obrazkiem
+brak pliku ntldr
+uszkodzony kontroler DMA
+skasowany BIOS komputera
+dyskietka włożona do napędu
+Q:7. Procesor Athlon 2800+ to
+T:3
+procesor firmy Intel taktowany częstotliwością 2,8 GB
+procesor firmy AMD taktowany częstotliwością 2,8 GB
+procesor firmy AMD o wydajności podobnej do procesora Pentium 4 taktowanego częstotliwością 2,8 GHz
+procesor firmy Intel o wydajności podobnej do procesora Pentium 4 taktowanego częstotliwością 2,8 GHz
+Q:8. Na podstawie zamieszczonej w tabeli informacji dotyczącej dysku twardego określ, który wniosek jest prawdziwy 
+I:http://egzamin-informatyk.pl/new/297.jpg
+T:3
+Defragmentacja jest zbędna, fragmentacja plików wynosi 0%
+Dysk wymaga defragmentacji, fragmentacja całkowita wynosi 19%
+Defragmentacja nie jest konieczna, fragmentacja całkowita wynosi 9% 
+Należy zdefragmentować dysk, fragmentacja wolnego miejsca wynosi 19% 
+Q:9. Komponentem płyty głównej odpowiedzialnym za komunikację pomiędzy procesorem a pozostałymi elementami płyty jest
+T:1
+chipset
+BIOS ROM
+pamięć RAM
+układ chłodzenia
+Q:10. Dostarczanie nieprawidłowych napięć do płyty głównej może prowadzić do
+T:1
+puchnięcia kondensatorów, zawieszania się jednostki centralnej oraz niespodziewanych restartów
+uruchomienia się jednostki centralnej z kolorowymi pasami i kreskami na ekranie
+braku możliwości instalacji oprogramowania
+wystąpienia błędów pamięci RAM
+Q:11. Która z liczb w zapisie dziesiętnym jest prawidłową reprezentacją liczby 10111111 (2)?
+T:1
+191 (10)
+193 (10)
+381 (10)
+382 (10)
+Q:12. Do sporządzenia projektu sieci komputerowej dla budynku szkoły najlepiej wykorzystać edytor grafiki wektorowej, którym jest program
+T:1
+AutoCad
+MS Excel
+MS Publisher
+Adobe Photoshop
+Q:13. W modelu RGB, w systemie szesnastkowym, kolor jest zapisany następująco: ABCDEF. Natężenie koloru niebieskiego w tym zapisie ma wartość dziesiętną
 T:4
-I:data/computer.png
-To jest komputer
-To jest klawiatura
-To jest myszka
-To jest monitor
-Q:Pytanie z kolorem
+171
+186
+205
+239
+Q:14. Aby dane pliku znajdującego się na dysku twardym, zapisane na niesąsiadujących ze sobą klastrach, zostały ułożone tak, by zajmowały sąsiadujące klastry, należy uruchomić
+T:4
+program chkdsk
+program scandisk
+oczyszczanie dysku
+defragmentację dysku
+Q:15. W dokumentacji technicznej płyty głównej jest zapis Supports up to Athlon XP 3000+ procesor. Oznacza on, że płyta główna obsługuję procesory Athlon.
 T:2
-C:0000ff
-To jest kolor zielony
-To jest kolor niebieski
-To jest kolor żółty
-To jest kolor czerwony
+zgodnie z mobile Athlon 64
+nie nowsze niż Athlon XP 3000+
+wszystkie o częstotliwości poniżej 3000 MHz
+wszystkie o częstotliwości powyżej 3000 MHz
+Q:16. Na płycie głównej pokazanej na schemacie, moduły pamięci RAM można zainstalować w gnieździe oznaczonym cyfrą
+I:http://egzamin-informatyk.pl/old/453.jpg
+T:1
+1
+2
+3
+4
+Q:17. Którą z opcji konfiguracji ustawień użytkownika z ograniczonymi uprawnieniami w systemie Windows, umożliwia przystawka secpol?
+T:1
+Zezwolenie na zmianę czasu systemowego
+Odebranie możliwości zapisu na płytach CD
+Blokadę określonych elementów w panelu sterowania
+Czyszczenie historii niedawno otwieranych dokumentów
+Q:18. Do wyświetlania zawartości katalogu w systemie Linux służy polecenie:
+T:1
+ls
+cd
+rpm
+pwd
+Q:19. Bęben światłoczuły jest stosowany w drukarkach
+T:2
+igłowych
+laserowych
+atramentowych
+termosublimacyjnych
+Q:20. Na zdjęciu przedstawiono gniazda należące do karty
+I:http://egzamin-informatyk.pl/old/353.jpg
+T:1
+sieciowej
+telewizyjnej
+dźwiękowej
+faksmodemowej
+Q:21. Zwykły użytkownik systemu Linux, który chce usunąć konto innego użytkownika razem z jego katalogiem domowym, powinien wydać polecenie
+T:4
+userdel nazwa_użytkownika
+userdel -d nazwa_użytkownika
+sudo userdel nazwa_użytkownika
+sudo userdel -r nazwa_użytkowania
+Q:22. Ustawa z dnia 14 grudnia 2012r. o odpadach nakazuje
+T:3
+składowanie odpadów maksymalnie przez 1 rok
+spalenie odpadów w jak najwyższej temperaturze
+poddanie odpadów w pierwszej kolejności odzyskowi
+neutralizację odpadów w dowolny sposób w jak najkrótszym czasie
+Q:23. Opisana technologia stosowana w systemach rodziny Windows to 
+I:http://egzamin-informatyk.pl/e12/542.jpg
+T:1
+Plug and Play
+File Allocation Table
+Wywołanie systemowe
+Hardware Abstraction Layer
+Q:24. W systemie binarnym wynikiem sumowania liczb dwójkowych 1001101 i 11001 jest
+T:2
+1101100
+1100110
+1110001
+1101101
+Q:25. W systemach Windows można przypisać użytkownika do dowolnej grupy za pomocą przystawki
+T:3
+certsrv
+fsmgmt
+lusrmgr
+services
+Q:26. Do zarządzania programami i usługami uruchamianymi wraz ze startem systemu operacyjnego w Windows 7 należy wykorzystać program
+T:4
+config.sys
+autorun.inf
+autoexec.bat
+msconfig.exe
+Q:27. Domyślnie, w systemie Linux, twardy dysk w standardzie SATA oznaczony jest
+T:2
+fda
+sda
+ida
+ide
+Q:28. Pamięć nieulotna, elektrycznie kasowana i programowana określana jest skrótem
+T:4
+IDE
+ROM
+RAM
+EEPROM
+Q:29. Niskopoziomowe formatowanie dysku IDE HDD
+T:3
+tworzy partycję rozszerzoną.
+tworzy partycję podstawową.
+jest wykonywane przez producenta dysku.
+umieszcza program rozruchowy w MBR
+Q:30. Bez zezwolenia posiadacza autorskich praw majątkowych do programu komputerowego jego legalny użytkownik, zgodnie z ustawą o prawie autorskim i prawach pokrewnych
+T:4
+może rozpowszechniać program
+nie może wykonać żadnej kopii programu
+może wykonać dowolną liczbę kopii programu na własny użytek
+może wykonać jedną kopię, jeśli jest to niezbędne do korzystania z programu
+Q:31. Do pomiaru wartości rezystancji służy
+T:1
+omomierz
+watomierz
+woltomierz
+amperomierz
+Q:32. Do zasilacza UPS o mocy rzeczywistej 480 W nie należy podłączać
+T:2
+urządzeń sieciowych typu router
+drukarki laserowej
+modemu ADSL
+monitora
+Q:33. Blok funkcjonalny RAMDAC na schemacie blokowym przedstawia
+I:http://egzamin-informatyk.pl/old/562.jpg
+T:1
+przetwornik cyfrowo-analogowy z pamięcią RAM
+przetwornik analogowo-cyfrowy z pamięcią RAM
+pamięć RAM karty graficznej
+pamięć ROM karty graficznej
+Q:34. Interfejs SLI (ang. Scalable Link Interface) służy do łączenia  
+T:1
+dwóch kart graficznych
+czytnika kart z płytą główną
+napędu Blu-ray z kartą dźwiękową
+karty graficznej z odbiornikiem TV
+Q:35. Na rysunku przedstawiono złącze zasilania
+I:http://egzamin-informatyk.pl/e12/328.jpg
+T:2
+stacji dyskietek
+ATX12V zasilania procesora
+dysków wewnętrznych SATA
+Molex do dysków twardych
+Q:36. W systemie Windows XP do zmiany typu systemu plików z FAT32 na NTFS należy wykorzystać program
+T:1
+convert.exe
+replace.exe
+subst.exe
+attrib.exe
+Q:37. Co pozwala utrzymać równomierny rozkład ciepła między procesorem a radiatorem?
+T:1
+Mieszanka termiczna
+Pasta grafitowa
+Silikonowy spray
+Klej
+Q:38. Do którego wyprowadzenia należy podłączyć głośniki aktywne w karcie dźwiękowej, której schemat funkcjonalny przedstawia rysunek?
+I:http://egzamin-informatyk.pl/old/12.jpg
+T:3
+Mic in
+Line in
+Line out
+Speaker out
+Q:39. Które konto nie jest wbudowanym w systemie Windows XP ?
+T:2
+gość
+admin
+pomocnik
+administrator
+Q:40. Ile maksymalnie dysków twardych można podłączyć bezpośrednio do płyty głównej, której fragment specyfikacji przedstawiono w ramce?
+I:http://egzamin-informatyk.pl/old/722.jpg
+T:3
+2
+4
+5
+8

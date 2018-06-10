@@ -17,10 +17,11 @@
   
   void display()
   {
+    prepareTextBox(w,h,text);
     fill(col);
     rect(x, y, w, h);
     fill(0);
-    text(text, x + w / 2, y + h / 2 + 10);
+    text(text, x,y,w,  h);
   }
   
   void hitbox()
